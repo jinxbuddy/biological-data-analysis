@@ -1,0 +1,20 @@
+# biological-data-analysis
+Simple data analysis with numpy
+import numpy
+x=numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+print(x)
+print(type(x))
+print(x.dtype)
+print(x.shape)
+print('the first value of the array: ', x[0,0])
+print('a random value: ', x[30,39])
+print(x[0:5, 0:10])
+print('the mean value of the dataset: ', numpy.mean(x))
+print('the maximum value of the dataset: ', numpy.max(x))
+print('the minimum value of the dataset: ', numpy.min(x))
+print('the standard deviation of the dataset: ', numpy.std(x))
+print('maximum inflammation for patient_0: ', numpy.max(x[0, :]) )
+print('average inflammation of each patient through 60 days: ', numpy.mean(x, axis=1))
+print('average inflammation of patients in a single day:', numpy.mean(x, axis=0))
+print(numpy.vstack([x, x]))
+print(numpy.diff(x[5, :7]))
